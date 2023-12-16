@@ -380,12 +380,13 @@ function numberToStringInBase(number, base) {
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-function toExponential(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toExponential(number, fractionDigits) {
+  // throw new Error('Not implemented');
   // const len = number.toString().length - 1;
   // const num1 = number / 10 ** len;
   // const num2 = num1.toFixed(f);
   // return `${num2}e+${len}`;
+  return number.toExponential(fractionDigits);
 }
 
 /**
@@ -399,9 +400,8 @@ function toExponential(/* number, fractionDigits */) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(number, f) {
-  const n = number;
-  return n.toFixed(f);
+function toFixed(number, fractionDigits) {
+  return number.toFixed(fractionDigits);
 }
 
 /**
