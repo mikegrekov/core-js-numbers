@@ -301,8 +301,12 @@ function getFibonacciNumber(ind) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let num = 0;
+  for (let i = 0; i <= n; i += 1) {
+    num += i;
+  }
+  return num;
 }
 
 /**
@@ -316,8 +320,9 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(n) {
+  // return n.toString().split('').reduce((acc, val) => acc + 1 * val, 0);
+  return `${n}`.split('').reduce((acc, val) => acc + 1 * val, 0);
 }
 
 /**
@@ -331,8 +336,9 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(n) {
+  const val = n.toString(2).split('');
+  return val.filter((i) => i === '1').length === 1;
 }
 
 /**
@@ -345,8 +351,8 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
 }
 
 /**
@@ -360,8 +366,8 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  return number.toString(base);
 }
 
 /**
@@ -376,6 +382,10 @@ function numberToStringInBase(/* number, base */) {
  */
 function toExponential(/* number, fractionDigits */) {
   throw new Error('Not implemented');
+  // const len = number.toString().length - 1;
+  // const num1 = number / 10 ** len;
+  // const num2 = num1.toFixed(f);
+  // return `${num2}e+${len}`;
 }
 
 /**
@@ -389,8 +399,9 @@ function toExponential(/* number, fractionDigits */) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(/* number, fractionDigits */) {
-  throw new Error('Not implemented');
+function toFixed(number, f) {
+  const n = number;
+  return n.toFixed(f);
 }
 
 /**
@@ -405,8 +416,8 @@ function toFixed(/* number, fractionDigits */) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
 }
 
 /**
